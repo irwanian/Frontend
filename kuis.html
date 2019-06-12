@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+      <h2>Kuis tak Berhadiah</h2> <br> <br>
+      <h3 style="color: red" id="timer" onload="onTimer()"> </h3>
+       <p>1. Siapakah pemain yang menentukan kemenangan di eastern conference semifinal game 7 pada 2019 playoff? <br> <input type="radio" class="soal1"> Joel Embiid <input type="radio" class="soal1">Ben Simmons <input type="radio" class="soal1">Kyle lowry <input type="radio" id="benar1"> Kawhi Leonard</p> <br>
+       <br> <br>
+       <p>2. bosan dengan GSW yang menuju final kesekian kalinya? memang sudah berapa kali GSW menuju NBA Finals berturut-turut? <br> <input type="radio" class="soal2"> 2 kali <input type="radio" class="soal2"> 3 kali <input type="radio" id="benar2"> 5 kali <input type="radio" class="soal2"> 4 kali</p>
+       <br> <br>
+       <p>3. Derrick Rose pada musim 2018-2019 sempat menorehkan sejarah meraih career high points pada angka 53 points, sebelum ini juga dia pernah mendapatkan gelar MVP pada tahun? <br> <input type="radio" class="soal3"> 2017 <input type="radio" id="benar3">2011 <input type="radio" class="soal3"> 2015 <input type="radio" class="soal3"> 2009 </p> <br><br> 
+       <br><br>
+       <p>4. sudah berapa kali kah Lebron James menemukan bandwagon nya? (berpindah-pindah team) <br> <input type="radio" id="benar4"> 3 kali <input type="radio" class="soal4"> 2 kali <input type="radio" class="soal4">7 kali <input type="radio" class="soal4"> 5 kali</p>
+        <br><br>
+        <p>5. berapa rekor 3 point made  yang pernah dicetak dalam 1 game? dan oleh siapa? <br> <input type="radio" id="benar5"> 14 kali, Klay Thompson <input type="radio" class="soal5"> 13 kali, Steph Curry <input type="radio" class="soal5"> 8 kali, baby Lebron <input type="radio" class="soal5"> 20 kali, Reggie Miller</p>
+        <br><br>
+        <input type="button" onclick="onSubmit()" value="submit">
+        <h3 style="color: red">
+            
+        </h3>
+
+        <script>
+            var soal = []
+
+            var nilai = 0
+            function onSubmit() {
+                
+        if(document.getElementById('benar1').checked){
+            nilai += 20
+        }if(document.getElementById('benar2').checked){
+        nilai += 20
+        }if(document.getElementById('benar3').checked){
+            nilai += 20
+        }if(document.getElementById('benar4').checked){
+            nilai += 20
+        }if(document.getElementById('benar5').checked){
+            nilai += 20
+        }else{nilai += 0}
+        
+        document.getElementsByTagName('h3')[1].innerHTML = `total nilai anda adalah ${nilai}`  
+       
+        }
+
+        var menit = 3;  
+    var detik = menit * 60;
+    var currentSeconds = 0;
+    var currentMinutes = 0;
+    
+    setTimeout(Decrement,1000); 
+
+    function Decrement() {
+        currentMinutes = Math.floor(detik / 60);
+        currentSeconds = detik % 60;
+        if(currentSeconds <= 9) currentSeconds = "0" + currentSeconds;
+        detik--;
+        document.getElementById("timer").innerHTML = 'waktu tersisa ' + currentMinutes + ":" + currentSeconds; 
+        if(detik !== -1) setTimeout('Decrement()',1000);
+        if(currentSeconds <= 0){
+        onSubmit()
+        }
+    }
+
+        
+        </script>
+    </body>
+</html>
