@@ -25,8 +25,8 @@
         </h3>
 
         <script>
-            var soal = []
-
+        
+        document.getElementsByTagName('h3')[1].innerHTML = ''
             var nilai = 0
             function onSubmit() {
                 
@@ -42,11 +42,12 @@
             nilai += 20
         }else{nilai += 0}
         
+
         document.getElementsByTagName('h3')[1].innerHTML = `total nilai anda adalah ${nilai}`  
        
         }
 
-        var menit = 3;  
+    var menit = 3;  
     var detik = menit * 60;
     var currentSeconds = 0;
     var currentMinutes = 0;
@@ -59,8 +60,8 @@
         if(currentSeconds <= 9) currentSeconds = "0" + currentSeconds;
         detik--;
         document.getElementById("timer").innerHTML = 'waktu tersisa ' + currentMinutes + ":" + currentSeconds; 
-        if(detik !== -1) setTimeout('Decrement()',1000);
-        if(currentSeconds <= 0){
+        if(detik !== -1) setTimeout('Decrement()',1000)
+        if(currentMinutes < 1 && currentSeconds < 1){
         onSubmit()
         }
     }
